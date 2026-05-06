@@ -1,18 +1,20 @@
 /* ============================================================
-   LUMIÈRE JEWELS — Main Stylesheet
+   LARRY'S ESTATE JEWELRY & PAWN — Main Stylesheet
+   White Elegant Theme
    ============================================================ */
 
 /* ── Custom Properties ───────────────────────────────────── */
 :root {
-  --color-gold:       #c9a84c;
-  --color-gold-light: #e8d08a;
-  --color-gold-dark:  #9a7530;
-  --color-bg:         #0e0c0a;
-  --color-surface:    #161310;
-  --color-surface-2:  #1e1a15;
-  --color-text:       #f5f0e8;
-  --color-text-muted: #8a7f70;
-  --color-border:     #2e2820;
+  --color-gold:       #b8952a;
+  --color-gold-light: #d4aa4a;
+  --color-gold-dark:  #8f711e;
+  --color-gold-pale:  #f5edda;
+  --color-bg:         #ffffff;
+  --color-surface:    #faf8f5;
+  --color-surface-2:  #f2ede5;
+  --color-text:       #1a1410;
+  --color-text-muted: #7a6e5e;
+  --color-border:     #e4ddd0;
 
   --font-serif:  'Cormorant Garamond', Georgia, serif;
   --font-sans:   'Montserrat', system-ui, sans-serif;
@@ -52,12 +54,12 @@ img {
 }
 
 a {
-  color: var(--color-gold);
+  color: var(--color-gold-dark);
   text-decoration: none;
   transition: color var(--transition);
 }
 
-a:hover { color: var(--color-gold-light); }
+a:hover { color: var(--color-gold); }
 
 ul { list-style: none; }
 
@@ -94,7 +96,7 @@ ul { list-style: none; }
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.06);
+  background: rgba(0,0,0,0.06);
   opacity: 0;
   transition: opacity 0.2s;
 }
@@ -103,23 +105,23 @@ ul { list-style: none; }
 
 .btn--primary {
   background: var(--color-gold);
-  color: var(--color-bg);
+  color: #ffffff;
 }
 
 .btn--primary:hover {
-  background: var(--color-gold-light);
-  color: var(--color-bg);
+  background: var(--color-gold-dark);
+  color: #ffffff;
 }
 
 .btn--outline {
   background: transparent;
-  color: var(--color-gold);
+  color: var(--color-gold-dark);
   border: 1px solid var(--color-gold);
 }
 
 .btn--outline:hover {
   background: var(--color-gold);
-  color: var(--color-bg);
+  color: #ffffff;
 }
 
 .btn--full { width: 100%; }
@@ -170,11 +172,13 @@ ul { list-style: none; }
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
   transition: background 0.4s, box-shadow 0.4s;
 }
 
 .nav.nav--scrolled {
-  background: rgba(14, 12, 10, 0.95);
+  background: rgba(255, 255, 255, 0.97);
   box-shadow: 0 1px 0 var(--color-border);
   backdrop-filter: blur(12px);
 }
@@ -191,7 +195,7 @@ ul { list-style: none; }
   font-size: 1.5rem;
   font-weight: 400;
   font-style: italic;
-  color: var(--color-gold);
+  color: var(--color-gold-dark);
 }
 
 .nav__logo-sub {
@@ -230,21 +234,21 @@ ul { list-style: none; }
   transition: width var(--transition);
 }
 
-.nav__link:hover { color: var(--color-gold); }
+.nav__link:hover { color: var(--color-gold-dark); }
 .nav__link:hover::after { width: 100%; }
 
 .nav__link--cta {
   padding: 8px 22px;
   border: 1px solid var(--color-gold);
   border-radius: var(--radius);
-  color: var(--color-gold);
+  color: var(--color-gold-dark);
 }
 
 .nav__link--cta::after { display: none; }
 
 .nav__link--cta:hover {
   background: var(--color-gold);
-  color: var(--color-bg);
+  color: #ffffff;
 }
 
 .nav__hamburger {
@@ -287,6 +291,7 @@ ul { list-style: none; }
   justify-content: center;
   padding: var(--nav-height) 24px 0;
   overflow: hidden;
+  background: linear-gradient(160deg, #fffdf9 0%, #faf6ee 50%, #f5ede0 100%);
 }
 
 .hero__bg {
@@ -299,13 +304,13 @@ ul { list-style: none; }
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.15;
+  opacity: 0.18;
 }
 
 .hero__bg-shape--1 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, var(--color-gold), transparent);
+  background: radial-gradient(circle, var(--color-gold-light), transparent);
   top: -200px;
   right: -100px;
 }
@@ -313,18 +318,32 @@ ul { list-style: none; }
 .hero__bg-shape--2 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, #8b6914, transparent);
+  background: radial-gradient(circle, #d4aa4a, transparent);
   bottom: -100px;
   left: -80px;
+  opacity: 0.12;
 }
 
 .hero__bg-shape--3 {
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, var(--color-gold-light), transparent);
+  background: radial-gradient(circle, var(--color-gold-pale), transparent);
   top: 40%;
   left: 30%;
-  opacity: 0.06;
+  opacity: 0.35;
+}
+
+/* Diamond grid overlay */
+.hero__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--color-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.25;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
 }
 
 .hero__content {
@@ -352,6 +371,7 @@ ul { list-style: none; }
   line-height: 1;
   margin-bottom: 28px;
   overflow: hidden;
+  color: var(--color-text);
 }
 
 .hero__title-line {
@@ -419,6 +439,7 @@ ul { list-style: none; }
    ============================================================ */
 .collections {
   padding: var(--section-gap) 0;
+  background: var(--color-bg);
 }
 
 .collections__grid {
@@ -434,13 +455,14 @@ ul { list-style: none; }
   padding: 40px 24px;
   text-align: center;
   cursor: pointer;
-  transition: border-color var(--transition), transform var(--transition);
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
   opacity: 0; /* animated by GSAP */
 }
 
 .collection-card:hover {
   border-color: var(--color-gold);
   transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(184, 149, 42, 0.12);
 }
 
 .collection-card__icon {
@@ -469,17 +491,18 @@ ul { list-style: none; }
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-gold-dark);
   background: none;
   border: none;
   cursor: pointer;
   padding: 4px 0;
   border-bottom: 1px solid transparent;
-  transition: border-color var(--transition);
+  transition: border-color var(--transition), color var(--transition);
 }
 
 .collection-card__btn:hover {
   border-color: var(--color-gold);
+  color: var(--color-gold);
 }
 
 /* ============================================================
@@ -515,9 +538,9 @@ ul { list-style: none; }
 
 .filter-btn:hover,
 .filter-btn--active {
-  color: var(--color-gold);
+  color: var(--color-gold-dark);
   border-color: var(--color-gold);
-  background: rgba(201, 168, 76, 0.07);
+  background: var(--color-gold-pale);
 }
 
 .catalog__search {
@@ -527,6 +550,7 @@ ul { list-style: none; }
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   overflow: hidden;
+  background: var(--color-bg);
   transition: border-color var(--transition);
 }
 
@@ -575,10 +599,10 @@ ul { list-style: none; }
 .catalog__error {
   text-align: center;
   padding: 20px;
-  color: var(--color-gold);
+  color: var(--color-gold-dark);
   font-size: 0.875rem;
-  background: rgba(201, 168, 76, 0.06);
-  border: 1px solid rgba(201, 168, 76, 0.2);
+  background: var(--color-gold-pale);
+  border: 1px solid rgba(184, 149, 42, 0.25);
   border-radius: var(--radius);
   margin-bottom: 32px;
 }
@@ -604,7 +628,7 @@ ul { list-style: none; }
 
 /* ── Jewelry Card ─── */
 .jewelry-card {
-  background: var(--color-surface-2);
+  background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   overflow: hidden;
@@ -615,9 +639,9 @@ ul { list-style: none; }
 }
 
 .jewelry-card:hover {
-  border-color: rgba(201, 168, 76, 0.5);
+  border-color: rgba(184, 149, 42, 0.5);
   transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 16px 40px rgba(184, 149, 42, 0.12);
 }
 
 .jewelry-card__image {
@@ -643,7 +667,7 @@ ul { list-style: none; }
 
 .jewelry-card__image-placeholder {
   font-size: 3.5rem;
-  opacity: 0.3;
+  opacity: 0.25;
 }
 
 .jewelry-card__badge {
@@ -654,7 +678,7 @@ ul { list-style: none; }
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-bg);
+  color: #ffffff;
   background: var(--color-gold);
   padding: 4px 10px;
   border-radius: 2px;
@@ -716,14 +740,14 @@ ul { list-style: none; }
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-gold-dark);
   background: none;
   border: none;
   cursor: pointer;
   transition: color var(--transition);
 }
 
-.jewelry-card__action:hover { color: var(--color-gold-light); }
+.jewelry-card__action:hover { color: var(--color-gold); }
 
 /* No results */
 .catalog__no-results {
@@ -749,7 +773,7 @@ ul { list-style: none; }
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
   padding: 18px 0;
-  background: var(--color-surface-2);
+  background: var(--color-gold-pale);
 }
 
 .marquee-strip__track {
@@ -757,7 +781,7 @@ ul { list-style: none; }
   gap: 40px;
   align-items: center;
   white-space: nowrap;
-  animation: marquee 25s linear infinite;
+  animation: marquee 32s linear infinite;
   width: max-content;
 }
 
@@ -767,7 +791,7 @@ ul { list-style: none; }
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--color-gold-dark);
 }
 
 .marquee-strip__diamond {
@@ -785,6 +809,7 @@ ul { list-style: none; }
    ============================================================ */
 .custom {
   padding: var(--section-gap) 0;
+  background: var(--color-bg);
 }
 
 .custom__layout {
@@ -834,7 +859,8 @@ ul { list-style: none; }
   font-family: var(--font-sans);
   font-size: 0.6875rem;
   font-weight: 600;
-  color: var(--color-gold);
+  color: var(--color-gold-dark);
+  background: var(--color-gold-pale);
 }
 
 .custom__features strong {
@@ -857,6 +883,7 @@ ul { list-style: none; }
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 40px;
+  box-shadow: 0 4px 24px rgba(184, 149, 42, 0.06);
 }
 
 .custom-form__title {
@@ -889,7 +916,7 @@ ul { list-style: none; }
 .form-group select,
 .form-group textarea {
   width: 100%;
-  background: var(--color-surface-2);
+  background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   color: var(--color-text);
@@ -903,15 +930,16 @@ ul { list-style: none; }
 }
 
 .form-group select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a7f70' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a6e5e' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
+  background-color: var(--color-bg);
   padding-right: 40px;
   cursor: pointer;
 }
 
 .form-group select option {
-  background: var(--color-surface-2);
+  background: var(--color-bg);
 }
 
 .form-group textarea { resize: vertical; }
@@ -925,13 +953,13 @@ ul { list-style: none; }
 .form-group input.input--error,
 .form-group select.input--error,
 .form-group textarea.input--error {
-  border-color: #e05252;
+  border-color: #c0392b;
 }
 
 .form-error {
   display: block;
   font-size: 0.75rem;
-  color: #e05252;
+  color: #c0392b;
   margin-top: 5px;
   min-height: 16px;
 }
@@ -942,10 +970,10 @@ ul { list-style: none; }
   gap: 12px;
   margin-top: 20px;
   padding: 16px 20px;
-  background: rgba(201, 168, 76, 0.08);
-  border: 1px solid rgba(201, 168, 76, 0.3);
+  background: var(--color-gold-pale);
+  border: 1px solid rgba(184, 149, 42, 0.35);
   border-radius: var(--radius);
-  color: var(--color-gold);
+  color: var(--color-gold-dark);
   font-size: 0.875rem;
 }
 
@@ -994,13 +1022,13 @@ ul { list-style: none; }
 .about__badge-ring--1 {
   width: 100%;
   height: 100%;
-  opacity: 0.2;
+  opacity: 0.25;
 }
 
 .about__badge-ring--2 {
   width: 78%;
   height: 78%;
-  opacity: 0.35;
+  opacity: 0.45;
   animation: rotateSlow 20s linear infinite;
   border-style: dashed;
 }
@@ -1008,7 +1036,7 @@ ul { list-style: none; }
 .about__badge-ring--3 {
   width: 56%;
   height: 56%;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 @keyframes rotateSlow {
@@ -1026,7 +1054,7 @@ ul { list-style: none; }
   font-family: var(--font-serif);
   font-size: 1.75rem;
   font-style: italic;
-  color: var(--color-gold);
+  color: var(--color-gold-dark);
 }
 
 .about__badge-sub {
@@ -1080,6 +1108,7 @@ ul { list-style: none; }
    ============================================================ */
 .contact {
   padding: var(--section-gap) 0;
+  background: var(--color-bg);
 }
 
 .contact__inner {
@@ -1106,6 +1135,16 @@ ul { list-style: none; }
   display: flex;
   flex-direction: column;
   gap: 8px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px 16px;
+  transition: box-shadow var(--transition), border-color var(--transition);
+}
+
+.contact__item:hover {
+  border-color: rgba(184, 149, 42, 0.4);
+  box-shadow: 0 8px 24px rgba(184, 149, 42, 0.08);
 }
 
 .contact__label {
@@ -1123,12 +1162,14 @@ ul { list-style: none; }
   line-height: 1.6;
 }
 
+.contact__item a:hover { color: var(--color-gold-dark); }
+
 /* ============================================================
    FOOTER
    ============================================================ */
 .footer {
-  background: var(--color-surface);
-  border-top: 1px solid var(--color-border);
+  background: var(--color-text);
+  border-top: 1px solid rgba(255,255,255,0.08);
   padding: 80px 0 40px;
 }
 
@@ -1144,13 +1185,13 @@ ul { list-style: none; }
   font-family: var(--font-serif);
   font-size: 1.375rem;
   font-style: italic;
-  color: var(--color-gold);
+  color: var(--color-gold-light);
   margin-bottom: 12px;
 }
 
 .footer__brand p {
   font-size: 0.875rem;
-  color: var(--color-text-muted);
+  color: rgba(255,255,255,0.5);
   line-height: 1.7;
 }
 
@@ -1160,7 +1201,7 @@ ul { list-style: none; }
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-text);
+  color: rgba(255,255,255,0.8);
   margin-bottom: 16px;
 }
 
@@ -1172,11 +1213,11 @@ ul { list-style: none; }
 
 .footer__links a {
   font-size: 0.875rem;
-  color: var(--color-text-muted);
+  color: rgba(255,255,255,0.45);
   transition: color var(--transition);
 }
 
-.footer__links a:hover { color: var(--color-gold); }
+.footer__links a:hover { color: var(--color-gold-light); }
 
 .footer__social h4 {
   font-family: var(--font-sans);
@@ -1184,7 +1225,7 @@ ul { list-style: none; }
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-text);
+  color: rgba(255,255,255,0.8);
   margin-bottom: 16px;
 }
 
@@ -1199,21 +1240,21 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(255,255,255,0.2);
   border-radius: 50%;
   font-size: 0.6875rem;
   font-weight: 600;
-  color: var(--color-text-muted);
+  color: rgba(255,255,255,0.45);
   transition: all var(--transition);
 }
 
 .footer__social-link:hover {
-  border-color: var(--color-gold);
-  color: var(--color-gold);
+  border-color: var(--color-gold-light);
+  color: var(--color-gold-light);
 }
 
 .footer__bottom {
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid rgba(255,255,255,0.08);
   padding-top: 32px;
   display: flex;
   justify-content: space-between;
@@ -1224,18 +1265,18 @@ ul { list-style: none; }
 
 .footer__bottom p {
   font-size: 0.8125rem;
-  color: var(--color-text-muted);
+  color: rgba(255,255,255,0.35);
 }
 
 .footer__stuller-note a {
-  color: var(--color-text-muted);
+  color: rgba(255,255,255,0.35);
   border-bottom: 1px solid transparent;
   transition: color var(--transition), border-color var(--transition);
 }
 
 .footer__stuller-note a:hover {
-  color: var(--color-gold);
-  border-color: var(--color-gold);
+  color: var(--color-gold-light);
+  border-color: var(--color-gold-light);
 }
 
 /* ============================================================
@@ -1261,14 +1302,14 @@ ul { list-style: none; }
 .modal__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(26, 20, 16, 0.72);
   backdrop-filter: blur(4px);
   cursor: pointer;
 }
 
 .modal__panel {
   position: relative;
-  background: var(--color-surface);
+  background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   max-width: 640px;
@@ -1278,6 +1319,7 @@ ul { list-style: none; }
   padding: 40px;
   transform: translateY(20px);
   transition: transform 0.35s var(--ease-gold);
+  box-shadow: 0 24px 80px rgba(184, 149, 42, 0.12);
 }
 
 .modal--open .modal__panel {
@@ -1302,7 +1344,7 @@ ul { list-style: none; }
 /* Modal body content */
 .modal-product__image {
   aspect-ratio: 4/3;
-  background: var(--color-surface-2);
+  background: var(--color-surface);
   border-radius: var(--radius);
   display: flex;
   align-items: center;
@@ -1319,7 +1361,7 @@ ul { list-style: none; }
 
 .modal-product__image-placeholder {
   font-size: 6rem;
-  opacity: 0.25;
+  opacity: 0.2;
 }
 
 .modal-product__category {
@@ -1360,7 +1402,7 @@ ul { list-style: none; }
 }
 
 .modal-product__spec {
-  background: var(--color-surface-2);
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 12px 16px;
@@ -1434,7 +1476,7 @@ ul { list-style: none; }
     top: var(--nav-height);
     left: 0;
     right: 0;
-    background: rgba(14, 12, 10, 0.97);
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(12px);
     flex-direction: column;
     align-items: flex-start;
@@ -1443,6 +1485,7 @@ ul { list-style: none; }
     transform: translateY(-110%);
     transition: transform 0.35s var(--ease-gold);
     border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
   }
 
   .nav--open .nav__links {
