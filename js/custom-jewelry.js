@@ -232,14 +232,17 @@
             if (btnLoad) btnLoad.classList.add('hidden');
           }
           /* Show error near submit button */
-          var errDiv = form.querySelector('.form-submit-error');
-          if (!errDiv) {
-            errDiv = document.createElement('p');
-            errDiv.className = 'form-error form-submit-error';
-            errDiv.style.marginTop = '12px';
-            form.querySelector('#customFormSubmit').insertAdjacentElement('afterend', errDiv);
-          }
-          errDiv.textContent = 'Something went wrong. Please try again or contact us directly.';
+            var submitBtn = form.querySelector('#customFormSubmit');
+            var errDiv = form.querySelector('.form-submit-error');
+            if (!errDiv && submitBtn) {
+              errDiv = document.createElement('p');
+              errDiv.className = 'form-error form-submit-error';
+              errDiv.style.marginTop = '12px';
+              submitBtn.insertAdjacentElement('afterend', errDiv);
+            }
+            if (errDiv) {
+              errDiv.textContent = 'Something went wrong. Please try again or contact us directly.';
+            }
         })
         .finally(function () {
           setSubmitting(form, false);

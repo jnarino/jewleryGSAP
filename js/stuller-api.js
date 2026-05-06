@@ -421,7 +421,7 @@
         };
       })
       .catch(function (err) {
-        console.warn('[SullerAPI] Live API failed, falling back to demo data.', err);
+        console.warn('[StullerAPI] Live API failed, falling back to demo data.', err);
         return _filterDemoData(category, query, page, pageSize);
       });
   }

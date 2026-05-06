@@ -457,6 +457,13 @@
       catalogError.classList.add('hidden');
     }
 
+    if (!window.StullerAPI) {
+      console.error('[Catalog] StullerAPI is not available. Ensure js/stuller-api.js is loaded before js/main.js.');
+      setLoadingState(false);
+      catalogError.classList.remove('hidden');
+      return Promise.resolve();
+    }
+
     return window.StullerAPI.fetchProducts({
       category: state.currentFilter,
       query: state.currentQuery,
