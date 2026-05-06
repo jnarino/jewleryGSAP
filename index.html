@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumière Jewels — Fine Jewelry &amp; Custom Creations</title>
+  <meta name="description" content="Discover exquisite fine jewelry and create your own bespoke pieces. Browse our curated Stuller catalog." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">
+      <span class="nav__logo-text">Lumière</span>
+      <span class="nav__logo-sub">Jewels</span>
+    </div>
+    <ul class="nav__links">
+      <li><a href="#collections" class="nav__link">Collections</a></li>
+      <li><a href="#catalog" class="nav__link">Catalog</a></li>
+      <li><a href="#custom" class="nav__link">Custom</a></li>
+      <li><a href="#about" class="nav__link">About</a></li>
+      <li><a href="#contact" class="nav__link nav__link--cta">Contact Us</a></li>
+    </ul>
+    <button class="nav__hamburger" id="navHamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <div class="hero__bg-shape hero__bg-shape--1"></div>
+      <div class="hero__bg-shape hero__bg-shape--2"></div>
+      <div class="hero__bg-shape hero__bg-shape--3"></div>
+    </div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Fine Jewelry &amp; Custom Creations</p>
+      <h1 class="hero__title">
+        <span class="hero__title-line">Crafted for</span>
+        <span class="hero__title-line hero__title-line--italic">Every</span>
+        <span class="hero__title-line">Occasion</span>
+      </h1>
+      <p class="hero__subtitle">Explore our curated collection of fine jewelry — rings, necklaces, earrings, and more — sourced from the Stuller catalog and crafted to perfection.</p>
+      <div class="hero__ctas">
+        <a href="#catalog" class="btn btn--primary">Explore Catalog</a>
+        <a href="#custom" class="btn btn--outline">Create Custom</a>
+      </div>
+    </div>
+    <div class="hero__scroll-indicator">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COLLECTIONS STRIP
+  ============================================================ -->
+  <section class="collections" id="collections">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-header__eyebrow">Shop By Category</p>
+        <h2 class="section-header__title">Our Collections</h2>
+      </div>
+      <div class="collections__grid">
+        <div class="collection-card" data-category="rings">
+          <div class="collection-card__icon">💍</div>
+          <h3 class="collection-card__name">Rings</h3>
+          <p class="collection-card__desc">Engagement, fashion &amp; wedding bands</p>
+          <button class="collection-card__btn" data-filter="rings">Browse</button>
+        </div>
+        <div class="collection-card" data-category="necklaces">
+          <div class="collection-card__icon">📿</div>
+          <h3 class="collection-card__name">Necklaces</h3>
+          <p class="collection-card__desc">Pendants, chains &amp; statement pieces</p>
+          <button class="collection-card__btn" data-filter="necklaces">Browse</button>
+        </div>
+        <div class="collection-card" data-category="earrings">
+          <div class="collection-card__icon">✨</div>
+          <h3 class="collection-card__name">Earrings</h3>
+          <p class="collection-card__desc">Studs, hoops &amp; drop earrings</p>
+          <button class="collection-card__btn" data-filter="earrings">Browse</button>
+        </div>
+        <div class="collection-card" data-category="bracelets">
+          <div class="collection-card__icon">🔗</div>
+          <h3 class="collection-card__name">Bracelets</h3>
+          <p class="collection-card__desc">Bangles, cuffs &amp; tennis bracelets</p>
+          <button class="collection-card__btn" data-filter="bracelets">Browse</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CATALOG
+  ============================================================ -->
+  <section class="catalog" id="catalog">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-header__eyebrow">Stuller Catalog</p>
+        <h2 class="section-header__title">Fine Jewelry</h2>
+        <p class="section-header__body">Every piece is sourced from Stuller — one of the world's leading jewelry manufacturers — and available in a variety of metals and stone options.</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="catalog__filters">
+        <button class="filter-btn filter-btn--active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="rings">Rings</button>
+        <button class="filter-btn" data-filter="necklaces">Necklaces</button>
+        <button class="filter-btn" data-filter="earrings">Earrings</button>
+        <button class="filter-btn" data-filter="bracelets">Bracelets</button>
+      </div>
+
+      <!-- Search -->
+      <div class="catalog__search">
+        <input type="search" id="catalogSearch" class="catalog__search-input" placeholder="Search jewelry..." aria-label="Search jewelry" />
+        <button class="catalog__search-btn" id="catalogSearchBtn" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+      </div>
+
+      <!-- Loading state -->
+      <div class="catalog__loading" id="catalogLoading">
+        <div class="spinner"></div>
+        <p>Loading catalog…</p>
+      </div>
+
+      <!-- Error state -->
+      <div class="catalog__error hidden" id="catalogError">
+        <p>Unable to load catalog. Showing sample collection.</p>
+      </div>
+
+      <!-- Grid -->
+      <div class="catalog__grid" id="catalogGrid"></div>
+
+      <!-- Load more -->
+      <div class="catalog__more">
+        <button class="btn btn--outline" id="loadMoreBtn">Load More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MARQUEE / BRAND STRIP
+  ============================================================ -->
+  <div class="marquee-strip">
+    <div class="marquee-strip__track">
+      <span>Fine Jewelry</span>
+      <span class="marquee-strip__diamond">◆</span>
+      <span>Custom Creations</span>
+      <span class="marquee-strip__diamond">◆</span>
+      <span>Stuller Certified</span>
+      <span class="marquee-strip__diamond">◆</span>
+      <span>Handcrafted</span>
+      <span class="marquee-strip__diamond">◆</span>
+      <span>Fine Jewelry</span>
+      <span class="marquee-strip__diamond">◆</span>
+      <span>Custom Creations</span>
+      <span class="marquee-strip__diamond">◆</span>
+      <span>Stuller Certified</span>
+      <span class="marquee-strip__diamond">◆</span>
+      <span>Handcrafted</span>
+      <span class="marquee-strip__diamond">◆</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CUSTOM JEWELRY
+  ============================================================ -->
+  <section class="custom" id="custom">
+    <div class="container">
+      <div class="custom__layout">
+        <div class="custom__info">
+          <p class="section-header__eyebrow">Bespoke Service</p>
+          <h2 class="custom__title">Create Your Own Piece</h2>
+          <p class="custom__body">Have something unique in mind? Our designers work directly with Stuller's custom manufacturing team to bring your vision to life — from initial sketch to final polish.</p>
+          <ul class="custom__features">
+            <li>
+              <span class="custom__feature-icon">01</span>
+              <div>
+                <strong>Consultation</strong>
+                <p>Describe your idea — metal, stones, style, and occasion.</p>
+              </div>
+            </li>
+            <li>
+              <span class="custom__feature-icon">02</span>
+              <div>
+                <strong>Design &amp; Render</strong>
+                <p>Receive a 3D render before production begins.</p>
+              </div>
+            </li>
+            <li>
+              <span class="custom__feature-icon">03</span>
+              <div>
+                <strong>Crafted &amp; Delivered</strong>
+                <p>Your piece is handcrafted and shipped to your door.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="custom__form-wrap">
+          <form class="custom-form" id="customForm" novalidate>
+            <h3 class="custom-form__title">Start Your Request</h3>
+
+            <div class="form-group">
+              <label for="cf-name">Your Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="cf-name" name="name" required placeholder="Jane Doe" autocomplete="name" />
+              <span class="form-error" id="cf-name-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="cf-email">Email Address <span aria-hidden="true">*</span></label>
+              <input type="email" id="cf-email" name="email" required placeholder="jane@example.com" autocomplete="email" />
+              <span class="form-error" id="cf-email-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="cf-phone">Phone Number</label>
+              <input type="tel" id="cf-phone" name="phone" placeholder="+1 (555) 000-0000" autocomplete="tel" />
+            </div>
+
+            <div class="form-group">
+              <label for="cf-type">Jewelry Type <span aria-hidden="true">*</span></label>
+              <select id="cf-type" name="jewelryType" required>
+                <option value="">Select a type…</option>
+                <option value="ring">Ring</option>
+                <option value="necklace">Necklace / Pendant</option>
+                <option value="earrings">Earrings</option>
+                <option value="bracelet">Bracelet</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="form-error" id="cf-type-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="cf-metal">Preferred Metal</label>
+              <select id="cf-metal" name="metal">
+                <option value="">No preference</option>
+                <option value="14k-yellow">14K Yellow Gold</option>
+                <option value="14k-white">14K White Gold</option>
+                <option value="14k-rose">14K Rose Gold</option>
+                <option value="18k-yellow">18K Yellow Gold</option>
+                <option value="platinum">Platinum</option>
+                <option value="sterling">Sterling Silver</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="cf-stone">Primary Stone</label>
+              <select id="cf-stone" name="stone">
+                <option value="">No stone / Not sure</option>
+                <option value="diamond">Diamond</option>
+                <option value="ruby">Ruby</option>
+                <option value="emerald">Emerald</option>
+                <option value="sapphire">Sapphire</option>
+                <option value="opal">Opal</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="cf-budget">Approximate Budget</label>
+              <select id="cf-budget" name="budget">
+                <option value="">Prefer not to say</option>
+                <option value="under-500">Under $500</option>
+                <option value="500-1500">$500 – $1,500</option>
+                <option value="1500-5000">$1,500 – $5,000</option>
+                <option value="5000-plus">$5,000+</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="cf-description">Describe Your Vision <span aria-hidden="true">*</span></label>
+              <textarea id="cf-description" name="description" required rows="4" placeholder="Tell us about the style, occasion, inspiration, or anything else that matters to you…"></textarea>
+              <span class="form-error" id="cf-description-error"></span>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full" id="customFormSubmit">
+              <span class="btn__text">Send Request</span>
+              <span class="btn__loading hidden">Sending…</span>
+            </button>
+
+            <div class="form-success hidden" id="customFormSuccess">
+              <span class="form-success__icon">✓</span>
+              <p>Thank you! We'll be in touch within 1–2 business days.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT / STULLER BADGE
+  ============================================================ -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about__layout">
+        <div class="about__visual">
+          <div class="about__badge">
+            <div class="about__badge-ring about__badge-ring--1"></div>
+            <div class="about__badge-ring about__badge-ring--2"></div>
+            <div class="about__badge-ring about__badge-ring--3"></div>
+            <div class="about__badge-inner">
+              <span class="about__badge-text">Stuller</span>
+              <span class="about__badge-sub">Authorized Retailer</span>
+            </div>
+          </div>
+        </div>
+        <div class="about__text">
+          <p class="section-header__eyebrow">Why Stuller</p>
+          <h2 class="about__title">Quality You Can Trust</h2>
+          <p>As an authorized Stuller retailer, every piece in our catalog is backed by one of North America's largest and most respected jewelry manufacturers — with over 50 years of craftsmanship excellence.</p>
+          <ul class="about__list">
+            <li>Thousands of in-stock fine jewelry styles</li>
+            <li>Ethically sourced diamonds and gemstones</li>
+            <li>Certified metals — 10K, 14K, 18K &amp; Platinum</li>
+            <li>Custom design &amp; manufacturing services</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+  ============================================================ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__inner">
+        <p class="section-header__eyebrow">Get In Touch</p>
+        <h2 class="contact__title">Visit Our Studio</h2>
+        <div class="contact__details">
+          <div class="contact__item">
+            <span class="contact__label">Address</span>
+            <span>123 Diamond Ave, Suite 10<br/>New York, NY 10001</span>
+          </div>
+          <div class="contact__item">
+            <span class="contact__label">Hours</span>
+            <span>Mon–Fri: 10am – 7pm<br/>Sat: 11am – 5pm</span>
+          </div>
+          <div class="contact__item">
+            <span class="contact__label">Phone</span>
+            <a href="tel:+12125550199">(212) 555-0199</a>
+          </div>
+          <div class="contact__item">
+            <span class="contact__label">Email</span>
+            <a href="mailto:hello@lumierejewels.com">hello@lumierejewels.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__layout">
+        <div class="footer__brand">
+          <span class="footer__logo">Lumière Jewels</span>
+          <p>Fine jewelry &amp; custom creations, powered by the Stuller catalog.</p>
+        </div>
+        <div class="footer__links">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#catalog">Catalog</a></li>
+            <li><a href="#custom">Custom Jewelry</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>Policies</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Returns &amp; Exchanges</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer__social">
+          <h4>Follow Us</h4>
+          <div class="footer__social-links">
+            <a href="#" aria-label="Instagram" class="footer__social-link">IG</a>
+            <a href="#" aria-label="Pinterest" class="footer__social-link">PT</a>
+            <a href="#" aria-label="Facebook" class="footer__social-link">FB</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; <span id="footerYear"></span> Lumière Jewels. All rights reserved.</p>
+        <p class="footer__stuller-note">Jewelry catalog powered by <a href="https://www.stuller.com" target="_blank" rel="noopener noreferrer">Stuller</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       PRODUCT MODAL
+  ============================================================ -->
+  <div class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <div class="modal__panel">
+      <button class="modal__close" id="modalClose" aria-label="Close">&times;</button>
+      <div class="modal__body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SCRIPTS
+  ============================================================ -->
+  <!-- GSAP (self-hosted vendor copies — no external CDN dependency) -->
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/vendor/TextPlugin.min.js"></script>
+
+  <!-- App scripts -->
+  <script src="js/stuller-api.js"></script>
+  <script src="js/custom-jewelry.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
